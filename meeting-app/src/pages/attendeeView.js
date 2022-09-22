@@ -44,7 +44,16 @@ export function AttendeeView(agendaItems) {
       </Menu>
       <Container id="page-wrap">
         <h1>Meeting Title</h1>
-        <h3>{selectedAgendaItem ? selectedAgendaItem.title : ""}</h3>
+        <div>
+          {selectedAgendaItem ? (
+            <>
+              <h3>{selectedAgendaItem.title}</h3>
+              <h5>{selectedAgendaItem.description}</h5>
+            </>
+          ) : (
+            ""
+          )}
+        </div>
       </Container>
     </div>
   );
