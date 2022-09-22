@@ -1,0 +1,1 @@
+export {AttendeeView} from './attendeeView'
