@@ -56,7 +56,6 @@ export function AttendeeView () {
                             description = {item.description}
                             timeEstimate = {item.timeEstimate}
                         />
-                        // <a id="home" className="menu-item" href="/">{item.title}</a>
                     )
                 })}
             </Menu>
