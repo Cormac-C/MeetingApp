@@ -1,19 +1,45 @@
 import { Container } from "react-bootstrap"
 import { slide as Menu } from 'react-burger-menu'
+import { AgendaItem } from "../components"
 
 
 export function AttendeeView () {
     const agendaItems = [
         {
-            title: "Item 1",
-            timeEstimate: "45 min",
-            description: "This is a description"
+            title: "Introduction",
+            timeEstimate: "5 min",
+            description: "This is a description of an investor meeting introduction"
         },
         {
-            title: "Item 2",
-            timeEstimate: "30 min",
-            description: "This is a description"
-        }
+            title: "Team Updates",
+            timeEstimate: "10 min",
+            description: "Meet the new coop student."
+        },
+        {
+            title: "Product Roadmap",
+            timeEstimate: "20 min",
+            description: "This is a description of an investor meeting roadmap"
+        },
+        {
+            title: "Sales Plan",
+            timeEstimate: "20 min",
+            description: "This is a description of an investor meeting sales plan"
+        },
+        {
+            title: "Team Updates",
+            timeEstimate: "10 min",
+            description: "Meet the new coop student."
+        },
+        {
+            title: "Product Roadmap",
+            timeEstimate: "20 min",
+            description: "This is a description of an investor meeting roadmap"
+        },
+        {
+            title: "Sales Plan",
+            timeEstimate: "20 min",
+            description: "This is a description of an investor meeting sales plan"
+        },
     ]
     return (
         <div id="outer-container">
@@ -25,7 +51,12 @@ export function AttendeeView () {
             >
                 {agendaItems && agendaItems.map((item) => {
                     return (
-                        <a id="home" className="menu-item" href="/">{item.title}</a>
+                        <AgendaItem
+                            title = {item.title}
+                            description = {item.description}
+                            timeEstimate = {item.timeEstimate}
+                        />
+                        // <a id="home" className="menu-item" href="/">{item.title}</a>
                     )
                 })}
             </Menu>

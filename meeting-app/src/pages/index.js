@@ -1,1 +1,1 @@
-export {AttendeeView} from './attendeeView'
+export {AttendeeView} from './AttendeeView'
