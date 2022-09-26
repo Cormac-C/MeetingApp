@@ -4,7 +4,7 @@ import { AgendaItem } from "../components";
 
 import React, { useState, useEffect } from "react";
 
-export function AttendeeView(agendaItems) {
+export function AttendeeView({ agendaItems }) {
   const [selectedAgendaItemId, setSelectedAgendaItemId] = useState();
   const [selectedAgendaItem, setSelectedAgendaItem] = useState();
 
@@ -30,6 +30,7 @@ export function AttendeeView(agendaItems) {
         outerContainerId={"outer-container"}
       >
         {agendaItems &&
+          agendaItems.length > 0 &&
           agendaItems.map((item) => {
             return (
               <AgendaItem

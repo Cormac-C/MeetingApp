@@ -1,1 +1,1 @@
-export {AgendaItem} from "./AgendaItem";
+export { AgendaItem } from "./AgendaItem";
