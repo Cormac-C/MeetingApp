@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { AttendeeView, Login } from "./pages";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { v4 as uuid } from "uuid";
 import { PresenterView } from "./pages/PresenterView";
 

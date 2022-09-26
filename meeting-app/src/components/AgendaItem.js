@@ -1,4 +1,4 @@
-import { Container, Row } from "react-bootstrap";
+import { Row } from "react-bootstrap";
 
 export function AgendaItem({
   title,

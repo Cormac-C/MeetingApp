@@ -1,5 +1,4 @@
 import { Container, Form } from "react-bootstrap";
-import { slide as Menu } from "react-burger-menu";
 import { EditAgendaItem, Sidebar } from "../components";
 
 import React, { useState, useEffect } from "react";

@@ -28,15 +28,15 @@ export function EditAgendaItem({
     setWorkingDescription(e.target.value);
   };
 
-  useEffect(() => {
-    resetWorking();
-  }, [id]);
-
   const resetWorking = () => {
     setWorkingTitle(title);
     setWorkingTimeEstimate(timeEstimate);
     setWorkingDescription(description);
   };
+
+  useEffect(() => {
+    resetWorking();
+  }, [id]);
 
   return (
     <Card className="w-3/5 p-4 my-8 mx-auto">

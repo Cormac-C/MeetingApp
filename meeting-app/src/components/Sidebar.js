@@ -1,4 +1,3 @@
-import { Container, Row } from "react-bootstrap";
 import { slide as Menu } from "react-burger-menu";
 import { AgendaItem } from "../components";
 
