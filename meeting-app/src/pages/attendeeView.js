@@ -26,15 +26,15 @@ export function AttendeeView({
   }, [selectedAgendaItemId, agendaItems]);
 
   return (
-    <div id="outer-container">
+    <div className="bg-cyan-100 h-screen" id="outer-container">
       <Sidebar
         agendaItems={agendaItems}
         setSelectedAgendaItemId={setSelectedAgendaItemId}
         userType={userType}
         setUserType={setUserType}
       />
-      <Container id="page-wrap">
-        <h1>{meetingTitle}</h1>
+      <Container id="page-wrap" className="py-8 space-y-4 text-left">
+        <h1 className="text-center">{meetingTitle}</h1>
         <div>
           {selectedAgendaItem ? (
             <>

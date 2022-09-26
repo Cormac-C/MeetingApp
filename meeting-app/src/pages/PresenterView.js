@@ -61,15 +61,16 @@ export function PresenterView({
   };
 
   return (
-    <div id="outer-container">
+    <div className="bg-teal-100" id="outer-container">
       <Sidebar
         agendaItems={agendaItems}
         setSelectedAgendaItemId={setSelectedAgendaItemId}
         userType={userType}
         setUserType={setUserType}
       />
-      <Container id="page-wrap">
-        <Form className="w-3/5 mx-auto">
+      <Container id="page-wrap" className="py-8 space-y-4">
+        <h1 className="text-center">Edit your Meeting</h1>
+        <Form className="w-3/5 mx-auto text-left">
           <Form.Label>Title</Form.Label>
           <Form.Control
             size="lg"
