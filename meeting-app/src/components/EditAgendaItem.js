@@ -28,7 +28,11 @@ export function EditAgendaItem({
     setWorkingDescription(e.target.value);
   };
 
-  const handleCancel = () => {
+  useEffect(() => {
+    resetWorking();
+  }, [id]);
+
+  const resetWorking = () => {
     setWorkingTitle(title);
     setWorkingTimeEstimate(timeEstimate);
     setWorkingDescription(description);
@@ -59,7 +63,7 @@ export function EditAgendaItem({
             <Button
               variant="outline-danger"
               size="sm"
-              onClick={() => handleCancel()}
+              onClick={() => resetWorking()}
             >
               Cancel
             </Button>
