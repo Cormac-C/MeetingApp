@@ -3,8 +3,10 @@ import "./App.css";
 import { AttendeeView, Login } from "./pages";
 import React, { useState, useEffect } from "react";
 import { v4 as uuid } from "uuid";
+import { PresenterView } from "./pages/PresenterView";
 
 function App() {
+  const [meetingTitle, setMeetingTitle] = useState();
   const [agendaItems, setAgendaItems] = useState([]);
   const [userType, setUserType] = useState(-1);
 
@@ -36,15 +38,21 @@ function App() {
   ];
 
   useEffect(() => {
+    setMeetingTitle(new Date().toString().slice(0, 10) + " Meeting");
     setAgendaItems(sampleAgendaItems);
   }, []);
 
   return (
     <div className="App">
       {userType === 0 ? (
-        <AttendeeView agendaItems={agendaItems} />
+        <AttendeeView meetingTitle={meetingTitle} agendaItems={agendaItems} />
       ) : userType === 1 ? (
-        console.log("Presenter View")
+        <PresenterView
+          meetingTitle={meetingTitle}
+          setMeetingTitle={setMeetingTitle}
+          agendaItems={agendaItems}
+          setAgendaItems={setAgendaItems}
+        />
       ) : (
         Login(setUserType)
       )}

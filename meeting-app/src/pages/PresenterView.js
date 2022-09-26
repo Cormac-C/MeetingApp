@@ -4,7 +4,7 @@ import { AgendaItem } from "../components";
 
 import React, { useState, useEffect } from "react";
 
-export function AttendeeView({ meetingTitle, agendaItems }) {
+export function PresenterView({ meetingTitle, agendaItems, setAgendaItems }) {
   const [selectedAgendaItemId, setSelectedAgendaItemId] = useState();
   const [selectedAgendaItem, setSelectedAgendaItem] = useState();
 
