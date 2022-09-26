@@ -1,5 +1,6 @@
-import { Container, Form } from "react-bootstrap";
+import { Container, Form, Button } from "react-bootstrap";
 import { EditAgendaItem, Sidebar } from "../components";
+import { v4 as uuid } from "uuid";
 
 import React, { useState, useEffect } from "react";
 
@@ -48,6 +49,17 @@ export function PresenterView({
     setAgendaItems(trimmedAgendaItems);
   };
 
+  const handleItemAdd = (e) => {
+    e.preventDefault();
+    agendaItems.push({
+      title: "Title",
+      timeEstimate: "-",
+      description: "Description",
+      id: uuid(),
+    });
+    setAgendaItems([...agendaItems]);
+  };
+
   return (
     <div id="outer-container">
       <Sidebar
@@ -79,6 +91,7 @@ export function PresenterView({
               />
             );
           })}
+        <Button onClick={(e) => handleItemAdd(e)}>Add Agenda Item</Button>
       </Container>
     </div>
   );
