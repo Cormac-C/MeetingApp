@@ -1,4 +1,4 @@
-import { Row, Col, Button, Card, Form } from "react-bootstrap";
+import { Row, Col, Button, Card, Form, CloseButton } from "react-bootstrap";
 import React, { useState, useEffect } from "react";
 
 export function EditAgendaItem({
@@ -7,6 +7,7 @@ export function EditAgendaItem({
   description,
   id,
   handleEdit,
+  handleDelete,
 }) {
   const [workingTitle, setWorkingTitle] = useState(title);
   const [workingTimeEstimate, setWorkingTimeEstimate] = useState(timeEstimate);
@@ -27,8 +28,19 @@ export function EditAgendaItem({
     setWorkingDescription(e.target.value);
   };
 
+  const handleCancel = () => {
+    setWorkingTitle(title);
+    setWorkingTimeEstimate(timeEstimate);
+    setWorkingDescription(description);
+  };
+
   return (
     <Card className="w-3/5 p-4 my-8 mx-auto">
+      <CloseButton
+        className="ml-auto"
+        aria-label="Hide"
+        onClick={(e) => handleDelete(e, id)}
+      />
       <Form className="text-left space-y-2">
         <Form.Label>Name</Form.Label>
         <Form.Control value={workingTitle} onChange={handleTitleChange} />
@@ -44,7 +56,11 @@ export function EditAgendaItem({
         />
         <Row className="flex-row pt-4 text-center">
           <Col>
-            <Button variant="outline-danger" size="sm">
+            <Button
+              variant="outline-danger"
+              size="sm"
+              onClick={() => handleCancel()}
+            >
               Cancel
             </Button>
           </Col>

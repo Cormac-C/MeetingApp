@@ -38,7 +38,13 @@ export function PresenterView({
     item.title = title;
     item.timeEstimate = timeEstimate;
     item.description = description;
-    setAgendaItems(agendaItems);
+    setAgendaItems([...agendaItems]);
+  };
+
+  const handleItemDelete = (e, id) => {
+    e.preventDefault();
+    const trimmedAgendaItems = agendaItems.filter((item) => item.id !== id);
+    setAgendaItems(trimmedAgendaItems);
   };
 
   return (
@@ -82,6 +88,7 @@ export function PresenterView({
                 timeEstimate={item.timeEstimate}
                 id={item.id}
                 handleEdit={handleItemEdit}
+                handleDelete={handleItemDelete}
               />
             );
           })}
