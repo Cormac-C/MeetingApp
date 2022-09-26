@@ -8,6 +8,8 @@ export function PresenterView({
   setMeetingTitle,
   agendaItems,
   setAgendaItems,
+  userType,
+  setUserType,
 }) {
   const [selectedAgendaItemId, setSelectedAgendaItemId] = useState();
   const [selectedAgendaItem, setSelectedAgendaItem] = useState();
@@ -51,9 +53,11 @@ export function PresenterView({
       <Sidebar
         agendaItems={agendaItems}
         setSelectedAgendaItemId={setSelectedAgendaItemId}
+        userType={userType}
+        setUserType={setUserType}
       />
       <Container id="page-wrap">
-        <Form>
+        <Form className="w-3/5 mx-auto">
           <Form.Label>Title</Form.Label>
           <Form.Control
             size="lg"
@@ -75,17 +79,6 @@ export function PresenterView({
               />
             );
           })}
-        <h1>{meetingTitle}</h1>
-        <div>
-          {selectedAgendaItem ? (
-            <>
-              <h3>{selectedAgendaItem.title}</h3>
-              <h5>{selectedAgendaItem.description}</h5>
-            </>
-          ) : (
-            ""
-          )}
-        </div>
       </Container>
     </div>
   );

@@ -3,7 +3,12 @@ import { Sidebar } from "../components";
 
 import React, { useState, useEffect } from "react";
 
-export function AttendeeView({ meetingTitle, agendaItems }) {
+export function AttendeeView({
+  meetingTitle,
+  agendaItems,
+  userType,
+  setUserType,
+}) {
   const [selectedAgendaItemId, setSelectedAgendaItemId] = useState();
   const [selectedAgendaItem, setSelectedAgendaItem] = useState();
 
@@ -25,6 +30,8 @@ export function AttendeeView({ meetingTitle, agendaItems }) {
       <Sidebar
         agendaItems={agendaItems}
         setSelectedAgendaItemId={setSelectedAgendaItemId}
+        userType={userType}
+        setUserType={setUserType}
       />
       <Container id="page-wrap">
         <h1>{meetingTitle}</h1>
