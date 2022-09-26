@@ -55,6 +55,8 @@ export function EditAgendaItem({
         />
         <Form.Label>Description</Form.Label>
         <Form.Control
+          as="textarea"
+          rows={4}
           value={workingDescription}
           onChange={handleDescriptionChange}
         />
