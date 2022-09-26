@@ -1,6 +1,6 @@
 import { Container, Form } from "react-bootstrap";
 import { slide as Menu } from "react-burger-menu";
-import { EditAgendaItem, AgendaItem } from "../components";
+import { EditAgendaItem, Sidebar } from "../components";
 
 import React, { useState, useEffect } from "react";
 
@@ -49,26 +49,10 @@ export function PresenterView({
 
   return (
     <div id="outer-container">
-      <Menu
-        right
-        push
-        pageWrapId={"page-wrap"}
-        outerContainerId={"outer-container"}
-      >
-        {agendaItems &&
-          agendaItems.length > 0 &&
-          agendaItems.map((item) => {
-            return (
-              <AgendaItem
-                title={item.title}
-                description={item.description}
-                timeEstimate={item.timeEstimate}
-                id={item.id}
-                setSelected={setSelectedAgendaItemId}
-              />
-            );
-          })}
-      </Menu>
+      <Sidebar
+        agendaItems={agendaItems}
+        setSelectedAgendaItemId={setSelectedAgendaItemId}
+      />
       <Container id="page-wrap">
         <Form>
           <Form.Label>Title</Form.Label>

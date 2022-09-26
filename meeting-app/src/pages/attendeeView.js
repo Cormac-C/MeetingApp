@@ -1,6 +1,6 @@
 import { Container } from "react-bootstrap";
 import { slide as Menu } from "react-burger-menu";
-import { AgendaItem } from "../components";
+import { AgendaItem, Sidebar } from "../components";
 
 import React, { useState, useEffect } from "react";
 
@@ -23,26 +23,10 @@ export function AttendeeView({ meetingTitle, agendaItems }) {
 
   return (
     <div id="outer-container">
-      <Menu
-        right
-        push
-        pageWrapId={"page-wrap"}
-        outerContainerId={"outer-container"}
-      >
-        {agendaItems &&
-          agendaItems.length > 0 &&
-          agendaItems.map((item) => {
-            return (
-              <AgendaItem
-                title={item.title}
-                description={item.description}
-                timeEstimate={item.timeEstimate}
-                id={item.id}
-                setSelected={setSelectedAgendaItemId}
-              />
-            );
-          })}
-      </Menu>
+      <Sidebar
+        agendaItems={agendaItems}
+        setSelectedAgendaItemId={setSelectedAgendaItemId}
+      />
       <Container id="page-wrap">
         <h1>{meetingTitle}</h1>
         <div>
