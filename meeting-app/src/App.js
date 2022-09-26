@@ -6,11 +6,12 @@ import { v4 as uuid } from "uuid";
 import { PresenterView } from "./pages/PresenterView";
 
 function App() {
-  const [meetingTitle, setMeetingTitle] = useState();
-  const [agendaItems, setAgendaItems] = useState([]);
+  const [meetingTitle, setMeetingTitle] = useState(
+    new Date().toString().slice(0, 10) + " Meeting"
+  );
   const [userType, setUserType] = useState(-1);
 
-  const sampleAgendaItems = [
+  const [agendaItems, setAgendaItems] = useState([
     {
       title: "Introduction",
       timeEstimate: "5 min",
@@ -35,12 +36,12 @@ function App() {
       description: "This is a description of an investor meeting sales plan",
       id: uuid(),
     },
-  ];
+  ]);
 
-  useEffect(() => {
-    setMeetingTitle(new Date().toString().slice(0, 10) + " Meeting");
-    setAgendaItems(sampleAgendaItems);
-  }, []);
+  //   useEffect(() => {
+  //     setMeetingTitle(new Date().toString().slice(0, 10) + " Meeting");
+  //     setAgendaItems(sampleAgendaItems);
+  //   }, []);
 
   return (
     <div className="App">
